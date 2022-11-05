@@ -1,0 +1,16 @@
+.DS_Store
+
+public/
+resources/_gen/
+assets/jsconfig.json
+hugo_stats.json
+
+hugo.exe
+hugo.darwin
+hugo.linux
+
+# Temporary lock file while building
+.hugo_build.lock
+
+# Exiftool backup files when removing exif
+*_original

@@ -1,0 +1,3 @@
+[submodule "themes/github-maverick"]
+	path = themes/github-maverick
+	url = https://github.com/y0ug/hugo-theme-github-maverick.git
