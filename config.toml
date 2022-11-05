@@ -2,7 +2,7 @@ baseURL = 'https://blog.codsec.com/'
 languageCode = 'en-us'
 title = "y0ug's Internet Misadventure"
 paginate = 10
-googleAnalytics = 'G-SBZY0HP325'
+#googleAnalytics = 'G-SBZY0HP325'
 theme = [ "github-maverick" ]
 
 [author]
