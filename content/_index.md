@@ -9,8 +9,7 @@ Follow my internet misadventure around
 - Programming
 
 
-You can find me on
-
-- [Twitter](https://twitter.com/y0ug)
-- [Github](https://github.com/y0ug)
-- [linkedin](https://www.linkedin.com/in/caronhugo/)
+You can find me on 
+<a href="https://twitter.com/y0ug"><i class="fab fa-twitter"></i></a>
+<a href="https://github.com/y0ug"><i class="fab fa-github"></i></a>
+<a href="https://www.linkedin.com/in/caronhugo"><i class="fab fa-linkedin"></i></a>

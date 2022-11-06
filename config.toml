@@ -4,6 +4,7 @@ title = "y0ug's Internet Misadventure"
 paginate = 10
 #googleAnalytics = 'G-SBZY0HP325'
 theme = [ "github-maverick" ]
+enableRobotsTXT = true
 
 [author]
   name = "Hugo Caron"
