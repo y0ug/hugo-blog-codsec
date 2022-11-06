@@ -33,7 +33,7 @@ theme = [ "github-maverick" ]
 
 [markup]
   [markup.goldmark.renderer]
-    unsafe = false 
+    unsafe =true 
   [markup.goldmark.parser]
 	autoHeadingID = true
 	autoHeadingIDType = 'github'
