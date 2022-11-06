@@ -90,7 +90,9 @@ One of the wall plate, it's upside down 🤷‍♂️
 
 <img style='width:50%' alt='RJ45 wall plate upside down' src='img/rj45-wall-plate.jpg' />
 
-I used a 50mm PVC tube at the end to hide the cable and passing from the basement to first floor but I start getting issue to pull cable at the 90 degree angle.  <img style='width:50%' alt='PVC tube 90degree junction' src='img/pvctube-90-rj45.jpg' />
+I used a 50mm PVC tube at the end to hide the cable and passing from the basement to first floor but I start getting issue to pull cable at the 90 degree angle. 
+
+<img style='width:50%' alt='PVC tube 90degree junction' src='img/pvctube-90-rj45.jpg' />
 
 For the keystones' connection I used *T568A* this is probably going to hunt me. We all make mistake.
 
