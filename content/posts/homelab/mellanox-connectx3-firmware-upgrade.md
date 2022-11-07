@@ -5,15 +5,19 @@ draft: false
 tags:
 - homelab
 - network
+- mellanox
+- 10G
+- SFP+
+- firmware
+description: Note on upgrading the firmware of a Mellanox MCX3111A-XCAT ConnectX-3 a 10G network card
 ---
 
-To upgrade some part of the network to 10G I bought [2 Mellanox MCX3111A-XCAT ConnectX-3 from China on ebay for $35 each](https://www.ebay.com/itm/115449939717) those cards are EOL but cheap and well supported.
+To upgrade some part of the network to 10G I bought two [Mellanox MCX3111A-XCAT ConnectX-3 from China on eBay for $35 each](https://www.ebay.com/itm/115449939717) those cards are EOL but cheap and well-supported.
 
-This is some note on how I update the firmware. After receiving them I plug one into my *TrueNas Scale (debian based)* PC. The card was detected but I was not getting any uplink when connected to the switch on directly to another card with a DAC cable.
 
-I decide to check the firmware
+This is some note on how I update the firmware. I'm using them with a DAC cable, so nothing fancy.
 
-You can used the official tools
+You can use the official tools
 
 ```
 mkdir ConnectX-Firmware 
@@ -24,13 +28,13 @@ cd  mft-4.21.0-99-x86_64-deb
 sudo ./install.sh
 ```
 
-Or from apt in this case `mlxconfig` become `mstconfig` and `flint` become `mstflint`
+Or from apt, in this case `mlxconfig` become `mstconfig` and `flint` become `mstflint`
 
 ```
 sudo apt install mstflint
 ```
 
-If you used the official package you  need to load start/load the module with
+If you used the official package, you  need to load start the module with
 
 ```
 $ sudo mst start
@@ -62,8 +66,6 @@ MST devices:
 
 You can query the configuration with `sudo mlxconfig -d /dev/mst/mt4099_pciconf0 query`
 
-In my case this it's not working 😔 
-
 ```
 $ sudo mlxconfig -d /dev/mst/mt4099_pciconf0  query
 
@@ -77,7 +79,9 @@ Configurations:                              Next Boot
 -E- Failed to query device current configuration
 ```
 
-The tools to flash the firmware is **flint** You can get the current firmware information with `sudo flint -d /dev/mst/mt4099_pci_cr0 query`
+This, it's not working 😔 for me. I'm not the only one,  to have this issue. If I need to enable *SRV-IO*  I will have to update the firmware .ini files and flash it with *flint*. More information on this post [https://github.com/Mellanox/mstflint/issues/590](https://github.com/Mellanox/mstflint/issues/590)
+
+The tools to flash the firmware is *flint* You can get the current firmware information with `sudo flint -d /dev/mst/mt4099_pci_cr0 query`
 
 ```
 $ sudo flint -d  /dev/mst/mt4099_pci_cr0 query full
@@ -118,7 +122,7 @@ PSID:                  MT_1170110023
 
 You want the **PSID** to be the same on the downloaded firmware and device.
 
-You can verify the downloaded firmware
+Furthermore, you can verify the downloaded firmware
 
 ```
 $ sudo flint -i ./fw-ConnectX3-rel-2_42_5000-MCX311A-XCA_Ax-FlexBoot-3.4.752.bin verify
@@ -151,7 +155,7 @@ $ sudo flint -i ./fw-ConnectX3-rel-2_42_5000-MCX311A-XCA_Ax-FlexBoot-3.4.752.bin
 -I- FW image verification succeeded. Image is bootable.
 ```
 
-You can backup a firmware and the configuration before flashing with
+You can backup  the current firmware and the configuration before flashing it with
 
 ```
 export BACKUP_NAME=fw-ConnectX3-backup
@@ -205,7 +209,7 @@ PSID:                  MT_1170110023
 ```
 
 
-You can check version with ethtool too.
+You can check version with *ethtool* too.
 
 ```
 $ sudo ethtool -i enp1s0
@@ -247,9 +251,3 @@ Settings for enp1s0:
                                link ifdown
         Link detected: yes
 ```
-
-
-I don't really need it but since *mlxconfig* is not working to update the configuration if I need to enable *SRV-IO* I will have to update the firmware .ini files and flash it with *flint*. More information on this post [https://github.com/Mellanox/mstflint/issues/590](https://github.com/Mellanox/mstflint/issues/590)
-
-
-
