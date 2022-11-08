@@ -16,6 +16,7 @@ enableRobotsTXT = true
 [params]
   logo = '/assets/favicon.ico'
   description = "y0ug's internet misadventure around malware analysis, reverse enginering, homelab building, programming, devops"
+  lastPostCpt = 10
 
 [params.comments]
   githubRepo = 'y0ug/hugo-blog-codsec'
@@ -31,6 +32,16 @@ enableRobotsTXT = true
     name = "Posts"
     url = "/posts/"
     weight = -200
+  [[menu.main]]
+    identifier = "homelab"
+    name = "Homelab"
+    url = "/tags/homelab/"
+    weight = -100
+  [[menu.main]]
+    identifier = "malware"
+    name = "Malware"
+    url = "/tags/malware/"
+    weight = -100
 
 [markup]
   [markup.goldmark.renderer]
