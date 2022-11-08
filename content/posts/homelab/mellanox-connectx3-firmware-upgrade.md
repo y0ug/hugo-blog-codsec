@@ -15,7 +15,7 @@ description: Note on upgrading the firmware of a Mellanox MCX3111A-XCAT ConnectX
 To upgrade some part of the network to 10G I bought two [Mellanox MCX3111A-XCAT ConnectX-3 from China on eBay for $35 each](https://www.ebay.com/itm/115449939717) those cards are EOL but cheap and well-supported.
 
 
-This is some note on how I update the firmware. I'm using them with a DAC cable, so nothing fancy.
+This is some note on how I updated the firmware. I'm using them with a DAC cable, so nothing fancy.
 
 You can use the official tools
 
@@ -34,7 +34,7 @@ Or from apt, in this case `mlxconfig` become `mstconfig` and `flint` become `mst
 sudo apt install mstflint
 ```
 
-If you used the official package, you  need to load start the module with
+If you used the official package, you need to start the module with
 
 ```
 $ sudo mst start
@@ -79,7 +79,7 @@ Configurations:                              Next Boot
 -E- Failed to query device current configuration
 ```
 
-This, it's not working 😔 for me. I'm not the only one,  to have this issue. If I need to enable *SRV-IO*  I will have to update the firmware .ini files and flash it with *flint*. More information on this post [https://github.com/Mellanox/mstflint/issues/590](https://github.com/Mellanox/mstflint/issues/590)
+It's not working 😔 for me. I'm not the only one,  to have this issue. If I need to enable *SRV-IO*  I will have to update the firmware .ini files and flash it with *flint*. More information on this post [https://github.com/Mellanox/mstflint/issues/590](https://github.com/Mellanox/mstflint/issues/590)
 
 The tools to flash the firmware is *flint* You can get the current firmware information with `sudo flint -d /dev/mst/mt4099_pci_cr0 query`
 
@@ -155,7 +155,7 @@ $ sudo flint -i ./fw-ConnectX3-rel-2_42_5000-MCX311A-XCA_Ax-FlexBoot-3.4.752.bin
 -I- FW image verification succeeded. Image is bootable.
 ```
 
-You can backup  the current firmware and the configuration before flashing it with
+You can back up the current firmware and the configuration before flashing it with
 
 ```
 export BACKUP_NAME=fw-ConnectX3-backup
@@ -187,7 +187,7 @@ Burning FS2 FW image without signatures - OK
 Restoring signature                     - OK
 ```
 
-After updating the firmware you can verify it with *query* it's still running on *2.35.5100* but will switch to *2.42.5000* on next boot.
+After updating the firmware, you can verify it with *query*. If you didn't reboot, you will see that it's still running on *2.35.5100* and will switch to *2.42.5000* on next boot.
 
 ```
 $ sudo flint -d  /dev/mst/mt4099_pci_cr0 query full
@@ -207,7 +207,6 @@ MACs:                                       e41d2ddd7850     e41d2ddd7851
 VSD:
 PSID:                  MT_1170110023
 ```
-
 
 You can check version with *ethtool* too.
 
