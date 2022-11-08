@@ -35,9 +35,11 @@ cscript //nologo slmgr.vbs /ipk W269N-WFGWX-YVC9B-4J6C9-T83GX
 cscript //nologo slmgr.vbs /skms 192.168.10.2:1688
 cscript //nologo slmgr.vbs /ato
 cscript //nologo slmgr.vbs /ato
+cscript //nologo slmgr.vbs /dlv
 ```
 
 * `/upk` is to remove all the KMS configuration
 * `/ipk` set the license
 * `/skms` set the KMS server IP
 * `/ato` run the activation, normally you have to run it twice
+* `/dlv` show current license information
