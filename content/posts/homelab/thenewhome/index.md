@@ -21,13 +21,13 @@ I decided to go with the ADSL and 4G.
 
 After I moved in the ADSL provider took some time to get me connected, so I quickly bought a cheap *TP-Link Archer MR400* on my LBC (leboncoin a local Craigslist) the time to research and find a better modem. This give me something like 70Mb/s at the same time the ADSL provider offer me 200 GB on 4G.
 
-<img style='width:50%' alt='TP-Link Archer MR400' src='img/tplink-archer-mr400.jpg' />
+<img style='width:50%' alt='TP-Link Archer MR400' src='img/tplink-archer-mr400.webp' />
 
 Everything escalated quickly. I had my ADSL connected, so after that I needed a router. I found a used *EdgeRouter 4* that was expensive but local and available. In the same time I order a [NanoPI R5S](https://wiki.friendlyelec.com/wiki/index.php/NanoPi_R5S) from China that I was planning to used has a router.
 
 Quickly my network start looking like this
 
-<img style='width:50%' alt='The medusa' src='img/medusa-network.jpg' />
+<img style='width:50%' alt='The medusa' src='img/medusa-network.webp' />
 
 At this point I found a [Nighthawk M1 4G LTE](https://www.netgear.com/home/mobile-wifi/hotspots/mr1100/) to replace the cheap *TP-Link*. This raised my bandwidth to around 150Mbit/s in good condition and 15/20MBit/s of up. I bought a 15€ *Netgear GS302* switch temporarily to connect everything, and I get back a [Unify UAP-AC](https://store.ui.com/products/uap-ac-pro) that I was using during COVID at my parent place.
 
@@ -48,17 +48,17 @@ Two good candidates were:
 
 I found a *LowcostMobile* with 15m of cable connected to it. I order a 50cm Ø 42mm pole with a plate solder on it to be able to attach to another pole.
 
-At this time I did not have a real plan yet, I was maybe planning to put on the roof, but I was uncertain if I will have pole available, or outside. I have what we call a [iron pergola](https://www.savoirfer.fr/wp-content/uploads/2020/02/pergolas-fer-forge-saint-raphael.jpg). The issue would have been running the cable from outside and I will not have on view the cell tower.
+At this time I did not have a real plan yet, I was maybe planning to put on the roof, but I was uncertain if I will have pole available, or outside. I have what we call a [iron pergola](https://www.savoirfer.fr/wp-content/uploads/2020/02/pergolas-fer-forge-saint-raphael.webp). The issue would have been running the cable from outside and I will not have on view the cell tower.
 
 To identify the cell tower in France, we have a website from the government. It come from the *AFNR*  the agency in charge of the radio frequency. [Carto Radio](https://www.cartoradio.fr/index.html#/). On it, you have a map and can filter by provider, frequencies etc.. The issue is you can't find the *cellid*. There is some open-source database from the cellid lookup, but I was unable to find mine inside.
 
 I tried the antenna at one of the second floor windows and got some good result, the RSSP before was between -105dBm to -115dBm. I get to -73dBm, so I've now a strong signal, but I can't close the windows.
 
-<img style='width:50%' alt='Antenna at the windows' src='img/antenna-windows.jpg' />
+<img style='width:50%' alt='Antenna at the windows' src='img/antenna-windows.webp' />
 
 I decide to try to put it into the attic, since I know I will be able to pass wire from the attic to this room. I was just not sure if the 15m of antenna cable where going to be long enough and if the signal will still be good enough.
 
-<img style='width:50%' alt='Antenna in the attic' src='img/antenna-attic.jpg' />
+<img style='width:50%' alt='Antenna in the attic' src='img/antenna-attic.webp' />
 
 The signal was still excellent around -75dBm SINR around 10/15dB.
 
@@ -69,7 +69,7 @@ Hopefully, I knew that was possible, some renter before me tried to wired the ho
 After some serious fight, I manage to pull two cables out in the basement, one running to the first floor and the second one to the second floor. 
 Not without doing thing wrong, like cutting through the wrong wall 😅.
 
-<img style='width:50%' alt='Basement first cable' src='img/basement-firstcable.jpg' />
+<img style='width:50%' alt='Basement first cable' src='img/basement-firstcable.webp' />
 
 My plan was finally possible, I will have a real network. 
 
@@ -84,15 +84,15 @@ I pull out:
 
 I should have run one more cable to the attic but I was running out of cable.
 
-<img style='width:50%' alt='Basement cables progress' src='img/basement-cables-progress.jpg' />
+<img style='width:50%' alt='Basement cables progress' src='img/basement-cables-progress.webp' />
 
 One of the wall plate, it's upside down 🤷‍♂️ 
 
-<img style='width:50%' alt='RJ45 wall plate upside down' src='img/rj45-wall-plate.jpg' />
+<img style='width:50%' alt='RJ45 wall plate upside down' src='img/rj45-wall-plate.webp' />
 
 I used a 50mm PVC tube at the end to hide the cable and passing from the basement to first floor but I start getting issue to pull cable at the 90 degree angle. 
 
-<img style='width:50%' alt='PVC tube 90degree junction' src='img/pvctube-90-rj45.jpg' />
+<img style='width:50%' alt='PVC tube 90degree junction' src='img/pvctube-90-rj45.webp' />
 
 For the keystones' connection I used *T568A* this is probably going to hunt me. We all make mistake.
 
@@ -100,11 +100,11 @@ Now I need a network rack. I tried to get the [StarTech.com WALLMOUNT8](https://
 
 I decide to find one local and within a day for 40e I found out a *Digitus 12U* (w/ an 8 ports power plug) but a little short in depth only 12" of course I discover that later.
 
-<img style='width:50%' alt='Network rack installed' src='img/network-rack-with-cables.jpg' />
+<img style='width:50%' alt='Network rack installed' src='img/network-rack-with-cables.webp' />
 
 After installing everything
 
-<img style='width:50%' alt='Network rack connected' src='img/network-rack-connected.jpg' />
+<img style='width:50%' alt='Network rack connected' src='img/network-rack-connected.webp' />
 
 So during that time I found a *Netgear GS324TP* on the LBC new for 120e, but it took 3 weeks to come due to the strike on petrol station resupply. 
  My need was to get something with POE for the two access point, manageable and more or less silent. It's not really silent but not loud, the fan only spin up something everything +/- 15min for 5min I will say and it's in the garage. There is some chance I will replace them by some *Noctua* if I keep the switch,
@@ -123,11 +123,11 @@ So during that time I found a *Netgear GS324TP* on the LBC new for 120e, but it 
 
 For the access point I switch to two Unifi UAP-6 Pro one in the basement and the second one on the second floor. With Wifi-6 I can connect close to gigabit speed getting 500/600Mb/s real speed around the house and close to 900Mb/s from time to time.
 
-<img style='width:50%' alt='Basement Access Point' src='img/basement-AP.jpg' />
+<img style='width:50%' alt='Basement Access Point' src='img/basement-AP.webp' />
 
 Temporary solution that will become permanent. I need it to point up, but it can't stay on the floor, the light is never on for a long time, so this seems to work.
 
-<img style='width:50%' alt='Second floor Access Point' src='img/secondfloor-AP.jpg' />
+<img style='width:50%' alt='Second floor Access Point' src='img/secondfloor-AP.webp' />
 
 The cable is coming from the attic.
 
@@ -139,9 +139,9 @@ I'm still looking tried to find a better offer.
 
 I put the *B818-263* on POE with a splitter, so I can liberate the outlet in the room and let everything sit in the closet.
 
-<img style='width:50%' alt='Huawei B818-263 on POE with external antenna' src='img/4g-modem-connected.jpg' />
+<img style='width:50%' alt='Huawei B818-263 on POE with external antenna' src='img/4g-modem-connected.webp' />
 
 
 Little teasing few weeks after with 10G in place. In the coming post, I will detail the network configuration.
 
-<img style='width:50%' alt='10G is here' src='img/network-10g.jpg' />
+<img style='width:50%' alt='10G is here' src='img/network-10g.webp' />
