@@ -1,14 +1,14 @@
 ---
 title: "Mikrotik Note"
 date: 2022-11-08T19:52:01+01:00
-draft: true
+draft: false
 ---
 
 Some note on how I set up a LACP between `CRS305-1G-4S+` and the Netgear switch.
 
-I want to use the 1G RJ45 port and the first SFP+ with an SFP RJ45 Copper Transceiver to connect the switch over 1G.
+I wanted to use the 1G RJ45 port and the first SFP+ with an SFP RJ45 Copper Transceiver to create a LACP link to connect the Netgear switch (that only support 1G connection), so I can get more bandwidth for the interconnection.
 
-The main issue with this switch is that I will lose the connection, trying to remove the interconnection port from the bridge before being able to create the bond. I had to KVM to one VM that I used *Winbox* with the mac address. A direct COM port would have really helped.
+The main issue with this switch is that I was losing the connection, trying to remove the interconnection port from the bridge before being able to create the bond. They don't support some kind of commit style configuration to issue multiple command before doing the commit. I had to connect over KVM to one VM that I used *Winbox* with the mac address. A direct COM port would have really helped.
 
 Safe mode press `ctrl-x` to enter and exit.
 

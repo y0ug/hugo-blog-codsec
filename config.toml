@@ -55,7 +55,7 @@ enableRobotsTXT = true
     startLevel = 1
 
   [markup.highlight]
-    style = 'github'
+    style = 'monokai'
 
 [taxonomies]
   tag = "tags"
