@@ -2,6 +2,12 @@
 title: "Mikrotik cheatsheet"
 date: 2022-11-08T19:52:01+01:00
 draft: false
+tags:
+- homelab
+- mikrotik
+- cheatsheet
+- note
+- configuration
 ---
 
 ## Configuration
@@ -46,7 +52,7 @@ By default, the encryption password of the user password (start at *v6.43*)
 /system backup save name=myconfig.backup password=MyPassw0rd^
 ```
 
-List file
+List files
 
 ```
 /file print
