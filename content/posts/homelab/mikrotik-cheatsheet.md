@@ -68,13 +68,13 @@ List files
 
 Copying your SSH key on the device with scp
 
-```
+```sh
 scp ~/.ssh/.id_rsa.pub admin@switch:
 ```
 
 On the device
 
-```
+```sh
 # import public key for the user
 /user ssh-keys import public-key-file=id_rsa.pub user=admin
 
@@ -89,8 +89,20 @@ On the device
 
 ### SSL Configuration 
 
-To get SSL certificate issue for a device on my local network without exposing service to the internet, I'm using the DNS verification for ZeroSSL/letsencrypt. For the domain *codsec.com* I'm using cloudfront for DNS provider, so I can use their API with various tools. On my local DNS, I have a zone for *home.codsec.com*, so those domains are never exposed online.
+To get SSL certificate issue for a device on my local network without exposing service to the internet, I'm using the DNS verification for ZeroSSL/letsencrypt. For the domain *codsec.com* I'm using *Cloudflare* for DNS provider, so I can use their API with various tools. On my local DNS, I have a zone for *home.codsec.com*, so those domains are never exposed online.
 
+
+The script used [acme.sh](https://github.com/acmesh-official/acme.sh) 
+
+```bash
+export CF_Account_ID=
+export CF_Token=
+DOMAIN=$1
+echo Issuing certificate for $DOMAIN
+CERT_PATH=$HOME/.acme.sh/$DOMAIN/
+acme.sh --issue --dns dns_cf -d $DOMAIN
+cat $CERT_PATH/$DOMAIN.cer $CERT_PATH/$DOMAIN.key > $CERT_PATH/$DOMAIN.cert
+```
 
 ```
 $ Documents/gen_cert.sh switch-10g.home.codsec.com
@@ -207,7 +219,7 @@ $ curl -vI https://switch-10g.home.codsec.com/
 
 Disabling various tool
 
-```
+```sh
 # Disable RoMON
 /tool romon set enabled=no
 
@@ -223,7 +235,7 @@ Disabling various tool
 
 Disabling unnecessary services
 
-```
+```sh
 # list current service
 /ip service print
 
@@ -244,7 +256,7 @@ Disabling unnecessary services
 
 Disabling the MAC-access on all interface (could maybe be enable on management network). This is usefull mostly to configure the bridge.
 
-```
+```sh
 # Disable mac-telnet services,
 /tool mac-server set allowed-interface-list=none
 
@@ -265,7 +277,7 @@ The main issue with this switch is that I will lose the connection, trying to re
 
 To set up the bond, I had to remove two interfaces from the current bridge.
 
-```
+```sh
 /interface bridge 
 port print
 port remove number=1,2
@@ -273,14 +285,14 @@ port remove number=1,2
 
 Then we need to create the bond with the two interfaces
 
-```
+```sh
 /interface bonding
 add mode=802.3ad name=bond1 slaves=ether1,sfp-sfpplus1 transmit-hash-policy=layer-2-and-3
 ```
 
 Adding the bond to the bridge.
 
-```
+```sh
 /interface bridge port
 add bridge=bridge interface=bond1
 ```
