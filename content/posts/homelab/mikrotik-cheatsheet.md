@@ -40,7 +40,7 @@ Safe mode press `ctrl-x` to enter and exit. This allows to revert to the previou
 
 ### Backup/restore
 
-By default, the encryption password of the user password (start at *v6.43*)
+By default, the encryption password is the user password (start at *v6.43*)
 
 ```
 /system backup save
